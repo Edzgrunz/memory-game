@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Memory Game</title>
+</head>
+
+<body>
+    <main class='main-container'>
+        <button class='menu-control'>☰</button>
+        <div class='menu-outer-container'>
+            <div class='menu-container'>
+                <h1>Score:</h1>
+                <div class='score-container'>
+                    <div class='line-joiner'>
+                        <h2>Missing: </h2>
+                        <h2 id='score'>0</h2>
+                    </div>
+                    <div class='line-joiner'>
+                        <h2>Tries: </h2>
+                        <h2 id='tries'>0</h2>
+                    </div>
+                    <button class='restart-score-button' onclick='restartGame()'>Restart</button>
+                </div>
+                <h1>Configuration:</h1>
+                <h2>Difficulty:</h2>
+                <div class='level-container'>
+                    <button class='level easy' onclick='setToEasy()'>Easy</button>
+                    <button class='level medium' onclick='setToMedium()'>Medium</button>
+                    <button class='level hard' onclick='setToHard()'>Hard</button>
+                </div>
+                <h2>Number of Groups:</h2>
+                <div class='counter-container'>
+                    <h2 id="group-number">2</h2>
+                    <button class='counter-button' onclick="addGroup()">+</button>
+                    <button class='counter-button' onclick="removeGroup()">-</button>
+                </div>
+                <h2>Number of Cards For Group:</h2>
+                <div class='counter-container'>
+                    <h2 id="card-group-number">2</h2>
+                    <button class='counter-button' onclick="addCardToGroup()">+</button>
+                    <button class='counter-button' onclick="removeCardFromGroup()">-</button>
+                </div>
+            </div>
+            <div class='menu-container-2'>
+                <h1>Graphics:</h1>
+                <h2>Card Size:</h2>
+                <div class='counter-container'>
+                    <h2 id="card-size">18</h2>
+                    <button class='counter-button' onclick="addCardSize()">+</button>
+                    <button class='counter-button' onclick="removeCardSize()">-</button>
+                </div>
+                <h2>Card Background:</h2>
+                <div class='card-background-container'>
+                    <button class='card-background-button' onclick="lastCardBackground()">🡀</button>
+                    <h2 id="card-background" style="font-size: 4em;">🂠</h2>
+                    <button class='card-background-button' onclick="nextCardBackground()">🡂</button>
+                </div>
+                <h2>Card Front:</h2>
+                <div class='card-background-container'>
+                    <button class='card-background-button' onclick="lastCardFront()">🡀</button>
+                    <h2 id="card-front" style="font-size: 4em;">0</h2>
+                    <button class='card-background-button' onclick="nextCardFront()">🡂</button>
+                </div>
+                <h2>Card Color:</h2>
+                <div class='slider-container'>
+                    <p class='slider-value'>Red:</p>
+                    <div id='slider-bar-red' class='slider'>
+                        <button id='slider-btn-red' class='slider-button'></button>
+                    </div>
+                    <p id='slider-value-red' class='slider-value'>0</p>
+                </div>
+                <div class='slider-container'>
+                    <p class='slider-value'>Green:</p>
+                    <div id='slider-bar-green' class='slider'>
+                        <button id='slider-btn-green' class='slider-button'></button>
+                    </div>
+                    <p id='slider-value-green' class='slider-value'>0</p>
+                </div>
+                <div class='slider-container'>
+                    <p class='slider-value'>Blue:</p>
+                    <div id='slider-bar-blue' class='slider'>
+                        <button id='slider-btn-blue' class='slider-button'></button>
+                    </div>
+                    <p id='slider-value-blue' class='slider-value'>0</p>
+                </div>
+            </div>
+        </div>
+
+        <h1>Memory Game</h1>
+        <ul id='game' class='container'>
+
+        </ul>
+            <div id="win-container" class='win-container'>
+                <h1 class='win-text'>Winner!</h1>
+                <h1 class='win-emoji'>🏆🏆🏆</h1>
+                <button id='win-button' class='win-button' onclick="restartGame()">Restart</button>
+            </div>
+    </main>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
